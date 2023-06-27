@@ -13,9 +13,9 @@
     "packager"
   ],
   "scripts": {
-    "compile": "rm -rf dist/* && babel . --out-dir dist --ignore node_modules,dist --source-maps ",
+    "compile": "shx rm -rf dist/* && babel . --out-dir dist --ignore node_modules,dist --source-maps ",
     "lint": "eslint \"src/**/*.{js, json}\"",
-    "transpile": "npm run compile && cp src/basic/Icon/selection.json dist/src/basic/Icon/selection.json && cp src/basic/Icon/NBIcons.json dist/src/basic/Icon",
+    "transpile": "npm run compile && shx cp src/basic/Icon/selection.json dist/src/basic/Icon/selection.json && shx cp src/basic/Icon/NBIcons.json dist/src/basic/Icon",
     "prepublish": "npm run transpile",
     "postinstall": "node addEjectScript.js && opencollective-postinstall",
     "flow": "flow"
@@ -71,7 +71,8 @@
     "pretty-quick": "^1.11.1",
     "react": "16.4.1",
     "react-native": "^0.60.4",
-    "react-test-renderer": "16.4.1"
+    "react-test-renderer": "16.4.1",
+    "shx": "^0.3.4"
   },
   "gitHead": "5bbeacc403ba97622703699132c55d8359344004",
   "homepage": "https://github.com/GeekyAnts/NativeBase#readme",
